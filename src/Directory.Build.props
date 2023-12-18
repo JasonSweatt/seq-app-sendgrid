@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+
+  <!-- These properties will be shared for all projects -->
+  <PropertyGroup>
+    <TargetFrameworks>net6.0;net8.0;</TargetFrameworks>
+    <Authors>Jason Sweatt and Contributors</Authors>
+    <Owners>Jason Sweatt</Owners>
+    <Company>Sweatt Equity, LLC</Company>
+    <Copyright>Copyright © 2023-$([System.DateTime]::Now.Year), Jason Sweatt. All rights reserved.</Copyright>
+    <NoWarn>1701;1702;1591;618;1998</NoWarn>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(MSBuildProjectName).xml</DocumentationFile>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Version>1.0.1</Version>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <VersionPrefix>$(Version)</VersionPrefix>
+    <VersionSuffix></VersionSuffix>
+    <VersionSuffix Condition=" '$(VersionSuffix)' != '' AND '$(BuildNumber)' != '' ">$(VersionSuffix)-$(BuildNumber)</VersionSuffix>
+    <NoWarn>$(NoWarn);S3875;S4457</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\shared\Shared\GlobalSuppressions.cs" Link="GlobalSuppressions.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="../../.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(Configuration)'=='Release'">
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <PropertyGroup Condition="$(MSBuildProjectName.Contains('Seq.App')) AND !$(MSBuildProjectName.Contains('Tests')) AND !$(MSBuildProjectName.Equals('Shared')) ">
+    <!-- Nuget Package Details -->
+    <PackageId>$(MSBuildProjectName)</PackageId>
+    <IsPackable>true</IsPackable>
+    <PackageVersion>$(VersionPrefix)</PackageVersion>
+    <PackageVersion Condition=" '$(VersionSuffix)' != ''">$(VersionPrefix)-$(VersionSuffix)</PackageVersion>
+    <PackageIcon>icon.png</PackageIcon>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <PackageProjectUrl>https://github.com/JasonSweatt/seq-app-sendgrid</PackageProjectUrl>
+    <PackageReadmeFile>readme.md</PackageReadmeFile>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/JasonSweatt/seq-app-sendgrid</RepositoryUrl>
+    <Description>
+      Send email from Seq using SendGrid in response to application log events and alerts. Supports Handlebars template syntax.
+      Requires Seq 2023.x+.x
+    </Description>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+  </PropertyGroup>
+
+  <ItemGroup Condition="$(MSBuildProjectName.Contains('Seq.App')) AND !$(MSBuildProjectName.Contains('Tests')) AND !$(MSBuildProjectName.Equals('Shared')) ">
+    <None Include="../../../readme.md" Pack="true" PackagePath="\"/>
+    <None Include="../../../LICENSE" Pack="true" PackagePath="\" />
+    <None Include="../../../asset/icon.png" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>
