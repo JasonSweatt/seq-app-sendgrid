@@ -1,0 +1,43 @@
+name: manually publish to nuget Carousel.Platform based on tag
+on:
+  workflow_dispatch:
+
+jobs:
+  publish:
+    name: build, pack & publish
+    runs-on: ubuntu-latest
+    outputs:
+      Version: ${{ steps.gitversion.outputs.SemVer }}
+      CommitsSinceVersionSource: ${{ steps.gitversion.outputs.CommitsSinceVersionSource }}
+    env:
+      BUILD_CONFIG: Release
+      SOLUTION: ./src/Seq.App.SendGrid.sln
+      NUGET_URL: https://api.nuget.org/v3/index.json
+
+    steps:
+      - name: Check out Code
+        uses: actions/checkout@v3
+
+      - name: Set env
+        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+
+      - name: Test Env var
+        run: |
+          echo $RELEASE_VERSION
+          echo ${{ env.RELEASE_VERSION }}
+
+      - name: Setup dotnet version
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Package nuget
+        run: dotnet pack ${{ env.SOLUTION }} --configuration $BUILD_CONFIG  --include-symbols  --verbosity q  -o:packages /p:PackageVersion=${{ env.RELEASE_VERSION }}
+
+      - name: Push generated package to nuget.org
+        run: |
+          for f in ./packages/*${{ env.RELEASE_VERSION }}.nupkg
+          do
+            dotnet nuget push @$f --api-key "${{ secrets.NUGET_API_KEY }}" --source ${{ env.NUGET_URL }} --skip-duplicate
+          done
+        shell: bash
