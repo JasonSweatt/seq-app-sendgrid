@@ -1,4 +1,4 @@
-name: manually publish to nuget Seq.App.SendGrid based on tag
+name: Publish To Nuget.org Seq.App.SendGrid Based On Tag
 on:
   workflow_dispatch:
 
@@ -38,6 +38,6 @@ jobs:
         run: |
           for f in ./packages/*${{ env.RELEASE_VERSION }}.nupkg
           do
-            dotnet nuget push @$f --api-key "${{ secrets.NUGET_API_KEY }}" --source ${{ env.NUGET_URL }} --skip-duplicate
+            dotnet nuget push $f --api-key "${{ secrets.NUGET_API_KEY }}" --source ${{ env.NUGET_URL }} --skip-duplicate
           done
         shell: bash
