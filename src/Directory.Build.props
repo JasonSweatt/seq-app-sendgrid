@@ -58,7 +58,7 @@
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/JasonSweatt/seq-app-sendgrid</RepositoryUrl>
     <Description>
-      Send email from Seq using SendGrid in response to application log events and alerts. Supports Handlebars template syntax.
+      Send email from Seq using SendGrid in response to application log events and alerts. Supports Handlebars template syntax within both SendGrid Dynamic Templating and plain html.
       Requires Seq 2023.x+.x
     </Description>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
@@ -68,9 +68,9 @@
   </PropertyGroup>
 
   <ItemGroup Condition="$(MSBuildProjectName.Contains('Seq.App')) AND !$(MSBuildProjectName.Contains('Tests')) AND !$(MSBuildProjectName.Equals('Shared')) ">
-    <None Include="../../../readme.md" Pack="true" PackagePath="\"/>
-    <None Include="../../../LICENSE" Pack="true" PackagePath="\" />
-    <None Include="../../../asset/icon.png" Pack="true" PackagePath="\" />
+    <None Include="../../../readme.md" Pack="true" PackagePath=""/>
+    <None Include="../../../LICENSE.txt" Pack="true" PackagePath="" />
+    <None Include="../../../asset/icon.png" Pack="true" PackagePath="" />
   </ItemGroup>
 
 </Project>
