@@ -69,7 +69,7 @@
 
   <ItemGroup Condition="$(MSBuildProjectName.Contains('Seq.App')) AND !$(MSBuildProjectName.Contains('Tests')) AND !$(MSBuildProjectName.Equals('Shared')) ">
     <None Include="../../../readme.md" Pack="true" PackagePath=""/>
-    <None Include="../../../LICENSE.txt" Pack="true" PackagePath="" />
+    <None Include="../../../LICENSE" Pack="true" PackagePath="" />
     <None Include="../../../asset/icon.png" Pack="true" PackagePath="" />
   </ItemGroup>
 
