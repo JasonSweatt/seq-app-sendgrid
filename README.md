@@ -1,7 +1,7 @@
 # Seq.App.SendGrid [![Build status](https://ci.appveyor.com/api/projects/status/79bx2u12pp6g16f2?svg=true)](https://ci.appveyor.com/project/JasonSweatt/seq-app-sendgrid) [![NuGet tag](https://img.shields.io/badge/nuget-seq_app-purple)](https://www.nuget.org/packages?q=seq-app)
 
 
-![SendGrid email app icon](https://raw.githubusercontent.com/JasonSweatt/seq-app-sendgrid/main/asset/seq-app-sendgrid.png)
+![SendGrid email app icon]([https://raw.githubusercontent.com/JasonSweatt/seq-app-sendgrid/main/asset/seq-app-sendgrid.png](https://raw.githubusercontent.com/JasonSweatt/seq-app-sendgrid/main/.github/images/seq-app-sendGrid.png))
 
 ## SendGrid email templates
 
