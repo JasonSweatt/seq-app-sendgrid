@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Threading;
 using System.Threading.Tasks;
 using Seq.App.SendGrid.Mailer.Interfaces;
@@ -50,8 +51,8 @@ public class SaveToDiskSender : ISender
     /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
     private async Task<bool> SaveEmailToDisk(IEmail email)
     {
-        var random = new Random();
-        var filename = Path.Combine(_directory, $"{DateTime.Now:yyyy-MM-dd_HH-mm-ss}_{random.Next(1000)}");
+        var random = RandomNumberGenerator.GetInt32(1000);
+        var filename = Path.Combine(_directory, $"{DateTime.Now:yyyy-MM-dd_HH-mm-ss}_{random}");
 
         using (var sw = new StreamWriter(File.OpenWrite(filename)))
         {
