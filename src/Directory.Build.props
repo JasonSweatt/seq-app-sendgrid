@@ -3,11 +3,11 @@
 
   <!-- These properties will be shared for all projects -->
   <PropertyGroup>
-    <TargetFrameworks>net6.0;net8.0;</TargetFrameworks>
+    <TargetFramework>net8.0</TargetFramework>
     <Authors>Jason Sweatt and Contributors</Authors>
     <Owners>Jason Sweatt</Owners>
     <Company>Sweatt Equity, LLC</Company>
-    <Copyright>Copyright © 2023-$([System.DateTime]::Now.Year), Jason Sweatt. All rights reserved.</Copyright>
+    <Copyright>Copyright © $([System.DateTime]::Now.Year), Jason Sweatt. All rights reserved.</Copyright>
     <NoWarn>1701;1702;1591;618;1998</NoWarn>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(MSBuildProjectName).xml</DocumentationFile>

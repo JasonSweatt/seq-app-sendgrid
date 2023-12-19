@@ -160,7 +160,7 @@ public class EmailApp : SeqApp, ISubscribeToAsync<LogEventData>
         DisplayName = "Body template",
         HelpText = "The template to use when generating the email body, using Handlebars syntax. Leave this blank to use " +
             "the default template that includes the message and " +
-            "properties (https://github.com/JasonSweatt/seq-app-sendgrid/blob/main/src/nuget/Seq.App.SendGrid/Resources/DefaultBodyTemplate.html).")]
+            "properties (https://raw.githubusercontent.com/JasonSweatt/seq-app-sendgrid/main/src/nuget/Seq.App.SendGrid/Resources/DefaultBodyTemplate.html).")]
     public string? BodyTemplate { get; set; }
 
     /// <summary>

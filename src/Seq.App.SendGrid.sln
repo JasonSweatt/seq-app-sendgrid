@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Seq.App.SendGrid", "nuget\S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Seq.App.SendGrid.Tests", "..\test\Seq.App.SendGrid.Tests\Seq.App.SendGrid.Tests.csproj", "{C451A1B4-A053-4E43-B97C-C3D3A0F82CC5}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sln", "sln", "{7A6823F0-171F-42FC-B068-8BA566729050}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_sln", "_sln", "{7A6823F0-171F-42FC-B068-8BA566729050}"
 	ProjectSection(SolutionItems) = preProject
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
@@ -20,6 +20,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sln", "sln", "{7A6823F0-171
 		Directory.Build.props = Directory.Build.props
 		global.json = global.json
 		LICENSE = LICENSE
+		..\.github\workflows\publish-nuget.yaml = ..\.github\workflows\publish-nuget.yaml
 		README.md = README.md
 		Run.ps1 = Run.ps1
 	EndProjectSection

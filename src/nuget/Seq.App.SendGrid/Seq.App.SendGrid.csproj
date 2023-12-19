@@ -2,6 +2,11 @@
 
   <PropertyGroup>
     <PackageTags>seq-app,SendGrid</PackageTags>
+    <PackageReleaseNotes>
+      - Update dependencies
+    </PackageReleaseNotes>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="./obj/publish/**/*" Exclude="./obj/publish/*/Seq.App.SendGrid.dll;./obj/publish/*/Seq.Apps.dll;./obj/publish/*/Serilog.dll" Pack="true" PackagePath="lib/$(TargetFramework)" />
+    <None Include="$(OutDir)/**/SendGrid.dll;$(OutDir)/**/Handlebars.dll;" Exclude="$(OutDir)/$(MSBuildProjectName).dll;$(OutDir)/Seq.Apps.dll;$(OutDir)/Serilog.dll" Pack="true" PackagePath="lib/$(TargetFramework)" />
   </ItemGroup>
 
 </Project>
