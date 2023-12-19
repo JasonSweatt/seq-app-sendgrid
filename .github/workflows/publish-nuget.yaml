@@ -1,4 +1,4 @@
-name: manually publish to nuget Carousel.Platform based on tag
+name: manually publish to nuget Seq.App.SengGrid based on tag
 on:
   workflow_dispatch:
 
