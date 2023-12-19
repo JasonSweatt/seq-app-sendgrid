@@ -1,4 +1,6 @@
-﻿<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
     <title>{{$Message}}</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -123,7 +125,7 @@
             {{#if Source.Results}}
             <div style="margin-top: 40px;">
                 <div style="font-weight: bold;">Results</div>
-                <table cellpadding="o" cellspacing="0" style="border-collapse: collapse; font-family: monospace;">
+                <table style="border-collapse: collapse; font-family: monospace;">
                     {{#each Source.Results}}
                     {{#if_eq @index 0}}
                     <tr>

@@ -1,4 +1,6 @@
-﻿namespace Seq.App.SendGrid.Mailer.Models;
+﻿using System.Runtime.CompilerServices;
+
+namespace Seq.App.SendGrid.Mailer.Models;
 
 /// <summary>
 /// Class Address.
@@ -35,29 +37,20 @@ public class Address
     /// <value>The email address.</value>
     public string? EmailAddress { get; set; }
 
-    /// <summary>
-    /// Returns a <see cref="System.String" /> that represents this instance.
-    /// </summary>
-    /// <returns>A <see cref="System.String" /> that represents this instance.</returns>
+    /// <inheritdoc />
     public override string ToString()
     {
         return Name == null ? EmailAddress : $"{Name} <{EmailAddress}>";
     }
 
-    /// <summary>
-    /// Returns a hash code for this instance.
-    /// </summary>
-    /// <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
+    /// <inheritdoc />
     public override int GetHashCode()
     {
-        return base.GetHashCode();
+        // ReSharper disable once BaseObjectGetHashCodeCallInGetHashCode
+        return RuntimeHelpers.GetHashCode(this);
     }
 
-    /// <summary>
-    /// Determines whether the specified <see cref="System.Object" /> is equal to this instance.
-    /// </summary>
-    /// <param name="obj">The object to compare with the current object.</param>
-    /// <returns><c>true</c> if the specified <see cref="System.Object" /> is equal to this instance; otherwise, <c>false</c>.</returns>
+    /// <inheritdoc />
     public override bool Equals(object? obj)
     {
         if (obj == null || !GetType().Equals(obj.GetType()))
