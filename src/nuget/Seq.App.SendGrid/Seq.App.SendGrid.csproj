@@ -20,13 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="$(OutputPath)\**\Handlebars.dll">
-      <Pack>true</Pack>
-      <BuildAction>None</BuildAction>
-      <PackageCopyToOutput>true</PackageCopyToOutput>
-      <PackagePath>lib\$(TargetFramework)</PackagePath>
-    </Content>
-    <Content Include="$(OutputPath)\**\SendGrid.dll">
+    <Content Include="$(OutputPath)\**\Handlebars.dll;$(OutputPath)\**\SendGrid.dll">
       <Pack>true</Pack>
       <BuildAction>None</BuildAction>
       <PackageCopyToOutput>true</PackageCopyToOutput>
