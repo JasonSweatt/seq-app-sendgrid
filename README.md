@@ -54,7 +54,7 @@ The app makes the following helper functions available in templates.
 
 This repository originally included the following apps from Datalust, each now in their own dedicated repositories:
 
- * **[File Archive](https://github.com/datalust/seq-app-htmlemail)** - html email using smtp
+ * **[Html Email](https://github.com/datalust/seq-app-htmlemail)** - html email using smtp - _The handlerbars Code was from this repo with modifications for SendGrid._
    * Helpers are [defined here](https://github.com/datalust/seq-app-htmlemail/blob/dev/src/Seq.App.EmailPlus/HandlebarsHelpers.cs).
  * **[File Archive](https://github.com/datalust/seq-app-filearchive)** - write incoming events into a set of rolling text files
  * **[First of Type](https://github.com/datalust/seq-app-firstoftype)** - raise an event the first time a new event type is seen
