@@ -1,7 +1,4 @@
-# <img src="https://raw.githubusercontent.com/JasonSweatt/seq-app-sendgrid/main/.github/images/seq-app-sendGrid.png" width="30" /> Seq.App.SendGrid [![Build status](https://ci.appveyor.com/api/projects/status/79bx2u12pp6g16f2?svg=true)](https://ci.appveyor.com/project/JasonSweatt/seq-app-sendgrid) [![NuGet tag](https://img.shields.io/badge/nuget-seq_app-purple)](https://www.nuget.org/packages?q=seq-app)
-
-
-
+# <img src="https://raw.githubusercontent.com/JasonSweatt/seq-app-sendgrid/main/.github/images/seq-app-sendGrid.png" width="30" /> Seq.App.SendGrid [![Build status](https://github.com/JasonSweatt/seq-app-sendgrid/actions/workflows/publish-nuget.yaml/badge.svg?branch=1.0.1)](https://ci.appveyor.com/project/JasonSweatt/seq-app-sendgrid) [![NuGet tag](https://img.shields.io/badge/nuget-seq_app-purple)](https://www.nuget.org/packages?q=seq-app)
 
 ## SendGrid email templates
 
@@ -33,7 +30,13 @@ Notifications for Alerts can use the properties [listed in the Seq documentation
 ### Event types and properties for Templating using SendGrid Templates
 
 * Helpers are [defined here](https://docs.sendgrid.com/for-developers/sending-email/using-handlebars#combined-examples)
-* All above values are supported just remove the $ from the key name
+* All above values are supported just remove the $ from the key name as a the template data
+
+### Seg App Settings
+
+<img src="https://raw.githubusercontent.com/JasonSweatt/seq-app-sendgrid/main/.github/images/seq-app-screenshot-1.png" />
+
+<img src="https://raw.githubusercontent.com/JasonSweatt/seq-app-sendgrid/main/.github/images/seq-app-screenshot-2.png" />
 
 ### Built-in helper functions
 

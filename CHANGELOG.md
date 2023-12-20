@@ -1,0 +1,1 @@
+*_1.0.1_* - official release tested with seq app.
