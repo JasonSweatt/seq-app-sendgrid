@@ -3,7 +3,7 @@
 
   <!-- These properties will be shared for all projects -->
   <PropertyGroup>
-    <TargetFrameworks>net6.0;net8.0;</TargetFrameworks>
+    <TargetFramework>net8.0</TargetFramework>
     <Authors>Jason Sweatt and Contributors</Authors>
     <Owners>Jason Sweatt</Owners>
     <Company>Sweatt Equity, LLC</Company>
