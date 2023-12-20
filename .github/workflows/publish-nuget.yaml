@@ -35,7 +35,7 @@ jobs:
         run: dotnet restore ${{ env.SOLUTION }} --packages ./packages
 
       - name: Build
-        run: dotnet build ${{ env.SOLUTION }} --c $BUILD_CONFIG --packages ./packages --no-restore
+        run: dotnet build ${{ env.SOLUTION }} -c $BUILD_CONFIG --packages ./packages --no-restore
 
       - name: Package nuget
         run: dotnet pack ${{ env.SOLUTION }} --configuration $BUILD_CONFIG --include-symbols --verbosity q -o:packages /p:PackageVersion=${{ env.RELEASE_VERSION }}
